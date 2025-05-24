@@ -1,14 +1,14 @@
 import java.util.concurrent.RecursiveTask;
 
-public class FactorialTask extends RecursiveTask<Integer> {
-    private final int num;
+public class FactorialTask extends RecursiveTask<Long> {
+    private final long num;
 
-    public FactorialTask(int num) {
+    public FactorialTask(long num) {
         this.num = num;
     }
 
     @Override
-    protected Integer compute() {
+    protected Long compute() {
         if (num <= 1) return num;
 
         FactorialTask subtask  = new FactorialTask(num - 1);
